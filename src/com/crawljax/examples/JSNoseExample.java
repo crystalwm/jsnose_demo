@@ -32,7 +32,7 @@ public final class JSNoseExample {
 	private static boolean doClickOnce = true;         // true: click only once on each clickable, false: multiple click
 	
 	
-	private static final String URL = "http://demo.crawljax.com/";
+	private static final String URL = "http://www.baidu.com/";
 	
 	//Final selected experimental objects
 
@@ -114,9 +114,13 @@ public final class JSNoseExample {
 		}
 
 	
-		if (URL.equals("http://localhost/Tunnel/")){
+	/*	if (URL.equals("http://localhost/Tunnel/")){
+			crawler.click("p").withAttribute("id", "welcome");
+		}*/
+		if (URL.equals("http://www.baidu.com/")){
 			crawler.click("p").withAttribute("id", "welcome");
 		}
+		
 		else if (URL.equals("http://localhost/GhostBusters/")){
 			crawler.click("div").withAttribute("data-m", "%").withAttribute("id", "g%");
 			crawler.dontClick("div").withAttribute("id", "end").withAttribute("backgroundColor", "#fff");
@@ -187,6 +191,7 @@ public final class JSNoseExample {
 	public static void main(String[] args) {
 		try {
 			CrawljaxController crawljax = new CrawljaxController(getCrawljaxConfiguration());
+			System.out.println("ddd");
 			crawljax.run();
 		} catch (CrawljaxException e) {
 			e.printStackTrace();
